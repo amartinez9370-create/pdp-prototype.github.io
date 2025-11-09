@@ -1003,7 +1003,7 @@ nav .logo {
     order: 2;
   }
 
-  #services,
+  /* #services,
   #photos div {
     display: flex !important;
     flex-direction: column;
@@ -1016,7 +1016,7 @@ nav .logo {
     justify-content: center;
     align-items: center;
     width: 100%;
-  }
+  } */
 
   #videos .gallery {
     display: grid;
@@ -1060,14 +1060,14 @@ nav .logo {
     max-width: 90vw;
   }
 
-  #services .feature-gallery {
+  /* #services .feature-gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: start;
     align-content: center;
     justify-content: start;
-  }
+  } */
 
   #services .hover-wrap,
   #services .feature-gallery img {
