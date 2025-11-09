@@ -109,6 +109,7 @@ a {
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
+  margin: 10px 0px;
   background-color: #2e8b57;
   color: #f0f0f0;
   cursor: pointer;
@@ -910,7 +911,7 @@ footer #copyright {
 /* === RESPONSIVE STYLES === */
 
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
 nav .logo-img {
     display: flex;
     margin-right: auto;
@@ -1078,10 +1079,6 @@ nav .logo {
 
   section#faq-section .faq-category{
     width: 90vw;
-  }
-
-  .btn1 {
-    margin: 10px 0px;
   }
 
   footer #set {
