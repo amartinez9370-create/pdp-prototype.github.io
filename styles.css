@@ -1046,6 +1046,10 @@ nav .logo {
     display: none;
   }
 
+  .frosted-box {
+    margin: auto;
+  }
+
   p {
     max-width: 90vw;
   }
