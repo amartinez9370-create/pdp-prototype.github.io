@@ -1116,6 +1116,26 @@ nav .logo {
   }
 }
 
+@media (max-width: 374px) {
+
+  #services .feature-gallery {
+    gap: 0%;
+    justify-content: space-between;
+  }
+
+  #services .hover-wrap,
+  #services .feature-gallery img {
+    width: 20vw;
+    height: auto;
+    justify-self: center;
+  }
+
+  #services .feature-gallery h3 {
+    font-size: medium;
+    margin-bottom: 30px;
+  }
+}
+
 
 /* === ANIMATIONS === */
 
