@@ -1060,19 +1060,15 @@ nav .logo {
     max-width: 90vw;
   }
 
-  /* #services .feature-gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-    align-content: center;
-    justify-content: start;
-  } */
+  #services .feature-gallery {
+    justify-content: space-between;
+  }
 
   #services .hover-wrap,
   #services .feature-gallery img {
     width: 25vw;
     height: auto;
+    justify-self: center;
   }
 
   #services-page .service-info {
@@ -1090,8 +1086,8 @@ nav .logo {
   }
 
   #faq-section .faq-description {
-  margin-bottom: 40px;
-  max-width: 90vw;
+    margin-bottom: 40px;
+    max-width: 90vw;
   }
 
   section#faq-section .faq-category{
