@@ -962,9 +962,9 @@ nav .logo {
     padding: 10px 0;
   }
 
-  section, footer {
+  /* section, footer {
     padding: 5vw !important;
-  }
+  } */
 
   section#hero {
     height: 50vh;
