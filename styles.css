@@ -936,8 +936,6 @@ nav .logo {
     padding-right: 0px;
   }
 
-  
-
   .hamburger {
     display: block;
   }
@@ -1060,6 +1058,21 @@ nav .logo {
 
   p {
     max-width: 90vw;
+  }
+
+  #services .feature-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    align-content: center;
+    justify-content: start;
+  }
+
+  #services .hover-wrap,
+  #services .feature-gallery img {
+    width: 25vw;
+    height: auto;
   }
 
   #services-page .service-info {
