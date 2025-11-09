@@ -923,9 +923,13 @@ nav .logo {
     display: none;
   }
 
+.banner img {
+  display: none;
 }
 
-@media (max-width: 770px) {
+}
+
+@media (max-width: 800px) {
   nav {
     height: auto;
     padding-left: 0px;
