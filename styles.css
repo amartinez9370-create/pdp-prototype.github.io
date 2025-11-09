@@ -909,6 +909,21 @@ footer #copyright {
 
 /* === RESPONSIVE STYLES === */
 
+
+@media (max-width: 1025px) {
+nav .logo-img {
+    display: flex;
+    margin-right: auto;
+  }
+
+nav .logo {
+    /* display: flex; */
+    /* font-size: medium; */
+    display: none;
+  }
+
+}
+
 @media (max-width: 770px) {
   nav {
     height: auto;
@@ -916,10 +931,7 @@ footer #copyright {
     padding-right: 0px;
   }
 
-  nav .logo {
-    display: flex;
-    font-size: medium;
-  }
+  
 
   .hamburger {
     display: block;
