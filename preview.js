@@ -1,6 +1,10 @@
 // Collect all gallery images into an array
 const galleryImages = Array.from(document.querySelectorAll('.gallery img'));
 
+galleryImages.forEach(img => {
+  img.addEventListener('click', () => openPreview(img.getAttribute('src')));
+});
+
 // Create overlay with next/prev controls
 const previewOverlay = document.createElement('div');
 previewOverlay.id = 'previewOverlay';
@@ -23,7 +27,9 @@ let currentIndex = 0;
 
 // Open preview
 function openPreview(src) {
-  currentIndex = galleryImages.findIndex(img => img.src === src);
+  // currentIndex = galleryImages.findIndex(img => img.src === src);
+  currentIndex = galleryImages.findIndex(img => img.getAttribute('src') === src);
+
   previewImage.src = src;
   previewOverlay.style.display = 'flex';
 }
@@ -215,5 +221,42 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+});
+
+
+
+// === ABOUT IMAGE SLIDES ===
+document.addEventListener("DOMContentLoaded", function() {
+  // Select the image element
+  const aboutImage = document.getElementById("aboutImage");
+
+  // List of image file paths to cycle through
+  const aboutImages = [
+    "assets/images/clinic_02.png",
+    "assets/images/clinic_03.png",
+    "assets/images/clinic_reception.png"
+  ];
+
+  let currentIndex = 0;
+
+  // Function to change the image with fade effect
+  function changeAboutImage() {
+    aboutImage.classList.add("fade-out");
+
+    // Wait for fade-out to complete
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % aboutImages.length;
+      aboutImage.src = aboutImages[currentIndex];
+
+      aboutImage.classList.remove("fade-out");
+      aboutImage.classList.add("fade-in");
+
+      // Remove fade-in class after animation
+      setTimeout(() => aboutImage.classList.remove("fade-in"), 500);
+    }, 500);
+  }
+
+  // Change image every 6 seconds
+  setInterval(changeAboutImage, 8000);
 });
 
