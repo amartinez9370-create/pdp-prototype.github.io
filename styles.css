@@ -1282,6 +1282,10 @@ footer #copyright {
     display: none;
   }
 
+  section#faq-section {
+    padding: 100px 10vw;
+  }
+
   #faq-section .faq-description {
     margin-bottom: 40px;
     max-width: 90vw;
