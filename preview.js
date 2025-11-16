@@ -88,19 +88,46 @@ navLinks.querySelectorAll('a').forEach(link => {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  const submenuParents = document.querySelectorAll(".has-submenu");
+// === MOBILE SUBMENU HANDLING ===
+const mobileNav = document.getElementById("mobile-nav");
+const hasSubmenu = document.querySelector(".mobile-nav .has-submenu");
+const submenu = hasSubmenu.querySelector(".submenu");
 
-  submenuParents.forEach(parent => {
-    parent.addEventListener("click", function(e) {
-      // Only trigger in mobile mode (nav is open)
-      if (window.innerWidth < 900) {
-        e.preventDefault(); // Prevent link from redirecting
-        this.classList.toggle("open");
-      }
-    });
+// Tap SERVICES → open/close only the submenu (not the whole menu)
+hasSubmenu.addEventListener("click", function (e) {
+  e.preventDefault();  
+  e.stopPropagation(); 
+  submenu.classList.toggle("open-submenu");
+});
+
+// Close menu + submenu when tapping a submenu item
+submenu.querySelectorAll("a").forEach(item => {
+  item.addEventListener("click", function () {
+    submenu.classList.remove("open-submenu");
+    mobileNav.classList.remove("menu-active");
+    document.body.classList.remove("no-scroll");
   });
 });
+
+// Close when tapping OUTSIDE the mobile menu
+document.addEventListener("click", function (e) {
+  if (!mobileNav.contains(e.target)) {
+    submenu.classList.remove("open-submenu");
+    mobileNav.classList.remove("menu-active");
+    document.body.classList.remove("no-scroll");
+  }
+});
+
+// Close menu (not submenu) when tapping ABOUT or CONTACT
+document.querySelectorAll(".mobile-nav a:not(.has-submenu > a)").forEach(link => {
+  link.addEventListener("click", function () {
+    mobileNav.classList.remove("menu-active");
+    document.body.classList.remove("no-scroll");
+  });
+});
+
+
+
 
 
 
