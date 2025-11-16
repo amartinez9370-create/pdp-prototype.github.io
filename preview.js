@@ -227,72 +227,109 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// === ABOUT IMAGE SLIDES (CLINIC)===
-document.addEventListener("DOMContentLoaded", function () {
-  // Select the image element
-  const aboutImage = document.getElementById("aboutImage");
+// // === ABOUT IMAGE SLIDES (CLINIC)===
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Select the image element
+//   const aboutImage = document.getElementById("aboutImage");
 
-  // List of image file paths to cycle through
-  const aboutImages = [
-    "assets/images/clinic_02.png",
-    "assets/images/clinic_03.png",
-    "assets/images/clinic_reception.png"
+//   // List of image file paths to cycle through
+//   const aboutImages = [
+//     "assets/images/clinic_02.png",
+//     "assets/images/clinic_03.png",
+//     "assets/images/clinic_reception.png"
+//   ];
+
+//   let currentIndex = 0;
+
+//   // Function to change the image with fade effect
+//   function changeAboutImage() {
+//     aboutImage.classList.add("fade-out");
+
+//     // Wait for fade-out to complete
+//     setTimeout(() => {
+//       currentIndex = (currentIndex + 1) % aboutImages.length;
+//       aboutImage.src = aboutImages[currentIndex];
+
+//       aboutImage.classList.remove("fade-out");
+//       aboutImage.classList.add("fade-in");
+
+//       // Remove fade-in class after animation
+//       setTimeout(() => aboutImage.classList.remove("fade-in"), 500);
+//     }, 500);
+//   }
+
+//   // Change image every 6 seconds
+//   setInterval(changeAboutImage, 8000);
+// });
+
+
+// // === ABOUT IMAGE SLIDES (DENTIST)===
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Select the image element
+//   const aboutImageD = document.getElementById("aboutImageDentist");
+
+//   // List of image file paths to cycle through
+//   const aboutImages2 = [
+//     "assets/images/bernadette-paciente-2.png",
+//     "assets/images/bernadette-paciente-1.png"
+//   ];
+
+//   let currentIndex2 = 0;
+
+//   // Function to change the image with fade effect
+//   function changeAboutImageDentist() {
+//     aboutImageD.classList.add("fade-out");
+
+//     // Wait for fade-out to complete
+//     setTimeout(() => {
+//       currentIndex2 = (currentIndex2 + 1) % aboutImages2.length;
+//       aboutImageD.src = aboutImages2[currentIndex2];
+
+//       aboutImageD.classList.remove("fade-out");
+//       aboutImageD.classList.add("fade-in");
+
+//       // Remove fade-in class after animation
+//       setTimeout(() => aboutImageD.classList.remove("fade-in"), 500);
+//     }, 500);
+//   }
+
+//   // Change image every 6 seconds
+//   setInterval(changeAboutImageDentist, 3000);
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = [
+    {
+      el: document.getElementById("aboutImageClinic"),
+      images: [
+        "assets/images/clinic_02.png",
+        "assets/images/clinic_03.png",
+        "assets/images/clinic_reception.png"
+      ],
+      interval: 8000,
+      currentIndex: 0
+    },
+    {
+      el: document.getElementById("aboutImageDentist"),
+      images: [
+        "assets/images/bernadette-paciente-2.png",
+        "assets/images/bernadette-paciente-1.png"
+      ],
+      interval: 8000,
+      currentIndex: 0
+    }
   ];
 
-  let currentIndex = 0;
-
-  // Function to change the image with fade effect
-  function changeAboutImage() {
-    aboutImage.classList.add("fade-out");
-
-    // Wait for fade-out to complete
-    setTimeout(() => {
-      currentIndex = (currentIndex + 1) % aboutImages.length;
-      aboutImage.src = aboutImages[currentIndex];
-
-      aboutImage.classList.remove("fade-out");
-      aboutImage.classList.add("fade-in");
-
-      // Remove fade-in class after animation
-      setTimeout(() => aboutImage.classList.remove("fade-in"), 500);
-    }, 500);
-  }
-
-  // Change image every 6 seconds
-  setInterval(changeAboutImage, 8000);
-});
-
-
-// === ABOUT IMAGE SLIDES (CLINIC)===
-document.addEventListener("DOMContentLoaded", function () {
-  // Select the image element
-  const aboutImageDentist = document.getElementById("aboutImageDentist");
-
-  // List of image file paths to cycle through
-  const aboutImagesD = [
-    "assets/images/bernadette-paciente-2.png",
-    "assets/images/bernadette-paciente-1.png"
-  ];
-
-  let currentIndex = 0;
-
-  // Function to change the image with fade effect
-  function changeAboutImageDentist() {
-    aboutImageDentist.classList.add("fade-out");
-
-    // Wait for fade-out to complete
-    setTimeout(() => {
-      currentIndex = (currentIndex + 1) % aboutImagesD.length;
-      aboutImageDentist.src = aboutImagesD[currentIndex];
-
-      aboutImageDentist.classList.remove("fade-out");
-      aboutImageDentist.classList.add("fade-in");
-
-      // Remove fade-in class after animation
-      setTimeout(() => aboutImageDentist.classList.remove("fade-in"), 500);
-    }, 500);
-  }
-
-  // Change image every 6 seconds
-  setInterval(changeAboutImageDentist, 8000);
+  slides.forEach(slide => {
+    setInterval(() => {
+      slide.el.classList.add("fade-out");
+      setTimeout(() => {
+        slide.currentIndex = (slide.currentIndex + 1) % slide.images.length;
+        slide.el.src = slide.images[slide.currentIndex];
+        slide.el.classList.remove("fade-out");
+        slide.el.classList.add("fade-in");
+        setTimeout(() => slide.el.classList.remove("fade-in"), 500);
+      }, 500);
+    }, slide.interval);
+  });
 });

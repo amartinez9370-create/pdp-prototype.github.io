@@ -495,7 +495,7 @@ section#services-page p {
 
 /* === ABOUT SECTION === */
 
-section#about {
+section#about-clinic {
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -505,7 +505,17 @@ section#about {
   background: #F5F5F5;
 }
 
-#about img {
+section#about-dentist {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 100px 10vw;
+  color: #2b2b2b;
+  background: #F5F5F5;
+}
+
+#about-clinic img {
   width: 100%;
   max-height: 100vh;
   border: #ffffff42 1px solid;
@@ -513,14 +523,35 @@ section#about {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-#about h2 {
+#about-dentist img {
+  width: 100%;
+  max-height: 100vh;
+  border: #ffffff42 1px solid;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#about-clinic h2 {
   font-family: 'Poppins', Arial, sans-serif;
   font-size: 2rem;
   margin-bottom: 2rem;
   color: #388E3C;
 }
 
-#about p {
+#about-dentist h2 {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #388E3C;
+}
+
+#about-clinic p {
+  text-align: justify;
+  max-width: 100%;
+  max-width: 100vw;
+}
+
+#about-dentist p {
   text-align: justify;
   max-width: 100%;
   max-width: 100vw;
@@ -1177,13 +1208,15 @@ footer #copyright {
   }
 
 
-  section#about,
+  section#about-clinic,
+  section#about-dentist,
   section#credit,
   section#contact {
     flex-direction: column;
   }
 
-  section#about .about-text,
+  section#about-clinic .about-text,
+  section#about-dentist.about-text,
   section#contact .contact-text {
     flex: 1;
     order: 1;
@@ -1191,7 +1224,8 @@ footer #copyright {
     text-align: justify;
   }
 
-  section#about .about-image,
+  section#about-clinic .about-image,
+  section#about-dentist.about-image,
   section#contact .contact-image {
     flex: 1;
     order: 2;
@@ -1422,15 +1456,27 @@ footer #copyright {
   }
 }
 
-#aboutImage {
+#aboutImageClinic {
   transition: opacity 0.5s ease;
 }
 
-#aboutImage.fade-out {
+#aboutImageDentist {
+  transition: opacity 0.5s ease;
+}
+
+#aboutImageClinic.fade-out {
   opacity: 0;
 }
 
-#aboutImage.fade-in {
+#aboutImageDentist.fade-out {
+  opacity: 0;
+}
+
+#aboutImageClinic.fade-in {
+  opacity: 1;
+}
+
+#aboutImageDentist.fade-in {
   opacity: 1;
 }
 
