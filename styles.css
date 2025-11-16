@@ -66,7 +66,8 @@ html {
   scroll-padding-top: 80px;
 }
 
-body, p {
+body,
+p {
   font-family: 'verdana', 'Inter', Arial, sans-serif;
   font-size: 18px;
   margin: 0;
@@ -84,7 +85,11 @@ p {
   padding: 0;
 }
 
-h3, h4, h5, h6, nav a {
+h3,
+h4,
+h5,
+h6,
+nav a {
   font-family: 'Century Gothic', 'Poppins', Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -225,47 +230,47 @@ nav a:focus {
 
 /* Container */
 .has-submenu {
-    position: relative;
+  position: relative;
 }
 
 /* Submenu hidden by default */
 .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #2e2e2e;
-    padding: 10px 0;
-    min-width: 180px;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px #00000026;
-    z-index: 999;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #2e2e2e;
+  padding: 10px 0;
+  min-width: 180px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px #00000026;
+  z-index: 999;
 }
 
 /* Submenu link styling */
 .submenu li {
-    list-style: none;
+  list-style: none;
 }
 
 .submenu li a {
-    display: block;
-    padding: 10px 15px;
-    color: #fff;
-    text-decoration: none;
-    white-space: nowrap;
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .submenu li a:hover {
-    background: #2e2e2e;
+  background: #2e2e2e;
 }
 
 /* Show submenu on hover (desktop) */
 .has-submenu:hover .submenu {
-    display: block;
+  display: block;
 }
 
 .has-submenu.open .submenu {
-    display: block;
+  display: block;
 }
 
 
@@ -362,7 +367,7 @@ section#services {
   padding: 20px;
   border-radius: 8px;
   background: #fff;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
@@ -452,7 +457,7 @@ section#services-page p {
   padding: 20px;
   border-radius: 8px;
   background: #fff;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   /* overflow: hidden; */
 }
 
@@ -493,7 +498,7 @@ section#services-page p {
 section#about {
   display: flex;
   align-items: start;
-  justify-content: space-between; 
+  justify-content: space-between;
   gap: 50px;
   padding: 100px 10vw;
   color: #2b2b2b;
@@ -505,7 +510,7 @@ section#about {
   max-height: 100vh;
   border: #ffffff42 1px solid;
   border-radius: 8px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 #about h2 {
@@ -526,7 +531,7 @@ section#about {
 section#credit {
   display: flex;
   align-items: start;
-  justify-content: space-between; 
+  justify-content: space-between;
   gap: 50px;
   padding: 100px 10vw;
   color: #2b2b2b;
@@ -537,7 +542,7 @@ section#credit {
   width: 100%;
   border: #ffffff42 1px solid;
   border-radius: 8px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 #credit h2 {
@@ -577,7 +582,7 @@ section#credit {
   margin: 0 auto;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-container {
@@ -608,7 +613,8 @@ section#credit {
 }
 
 #testimonials .stars {
-  color: #ffbb00; /* gold stars */
+  color: #ffbb00;
+  /* gold stars */
   letter-spacing: 3px;
   margin: 0.5rem 0;
   font-size: 1.5rem;
@@ -642,11 +648,17 @@ section#credit {
   transform: scale(1.1);
 }
 
-#testimonials .prev-btn { left: 15px; }
-#testimonials .next-btn { right: 15px; }
+#testimonials .prev-btn {
+  left: 15px;
+}
+
+#testimonials .next-btn {
+  right: 15px;
+}
 
 /* Optional: Smaller and subtler arrows on mobile */
 @media (max-width: 600px) {
+
   #testimonials .prev-btn img,
   #testimonials .next-btn img {
     width: 28px;
@@ -662,11 +674,104 @@ section#dental-tips {
   flex-direction: column;
   gap: 32px;
   padding: 100px 10vw;
+  background: #f5f5f5;
+  color: #2b2b2b;
+  align-items: center;
+  text-align: left;
+}
+
+/* === TIPS & NEWS PAGE (DOWNLOADS) === */
+section#downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 100px 10vw;
   background: #f0f0f0;
   color: #2b2b2b;
   align-items: center;
   text-align: left;
 }
+
+
+/* CSS for News*/
+
+#dental-news {
+  padding: 100px;
+  background-color: #f0f0f0;
+}
+
+#dental-news .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#dental-news h2 {
+  color: #2e8b57;
+  margin-bottom: 10px;
+}
+
+#dental-news p {
+  margin-bottom: 30px;
+  color: #555;
+  font-size: 16px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 85px;
+}
+
+.news-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  /*box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;*/
+}
+
+.news-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.news-card .content {
+  padding: 15px;
+  text-align: left;
+}
+
+.news-card h3 {
+  color: #2e8b57;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.news-card a {
+  color: #0077b6;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.news-card p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 /* === FAQ SECTION === */
@@ -752,8 +857,13 @@ section#faq-section {
 }
 
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 
@@ -762,7 +872,7 @@ section#faq-section {
 section#booking {
   display: flex;
   align-items: center;
-  justify-self: center; 
+  justify-self: center;
   gap: 50px;
   padding: 100px 10vw;
   color: #2b2b2b;
@@ -773,7 +883,7 @@ section#booking {
   width: 100%;
   border: #ffffff42 1px solid;
   border-radius: 8px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 #booking h2 {
@@ -818,7 +928,7 @@ section#contact {
   align-self: center;
   border: #ffffff42 1px solid;
   border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 #contact iframe {
@@ -886,16 +996,19 @@ footer #copyright {
 #previewOverlay {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
   z-index: 9999;
 }
 
 #previewImage {
   position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 90%;
   max-height: 90%;
   border-radius: 8px;
@@ -923,8 +1036,13 @@ footer #copyright {
   z-index: 10001;
 }
 
-.prev-btn { left: 30px; }
-.next-btn { right: 30px; }
+.prev-btn {
+  left: 30px;
+}
+
+.next-btn {
+  right: 30px;
+}
 
 .prev-btn:hover,
 .next-btn:hover {
@@ -962,25 +1080,25 @@ footer #copyright {
 
 
 @media (max-width: 1024px) {
-nav .logo-img {
+  nav .logo-img {
     display: flex;
     margin-right: auto;
   }
 
-nav .logo {
+  nav .logo {
     /* display: flex; */
     /* font-size: medium; */
     display: none;
   }
 
 
-section#hero h1 {
+  section#hero h1 {
     text-align: center;
-}
+  }
 
-.banner img {
-  display: none;
-}
+  .banner img {
+    display: none;
+  }
 
 
 }
@@ -997,7 +1115,8 @@ section#hero h1 {
   }
 
   nav ul {
-    display: none; /* hide links initially */
+    display: none;
+    /* hide links initially */
     flex-direction: column;
     background: #2e2e2e;
     position: absolute;
@@ -1006,16 +1125,30 @@ section#hero h1 {
     width: 200px;
     padding: 20px;
     gap: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   nav ul.show {
-    display: flex; /* show links when toggled */
+    display: flex;
+    /* show links when toggled */
   }
 
   nav ul li a {
     display: block;
     padding: 10px 0;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: -200px;
+    background: #2e2e2e;
+    padding: 10px 0;
+    min-width: 180px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px #00000026;
+    z-index: 999;
   }
 
   /* section, footer {
@@ -1062,7 +1195,7 @@ section#hero h1 {
 
   #services-page .service-info,
   #services-page .services-page-header p {
-  max-width: 100vw;
+    max-width: 100vw;
   }
 
   #videos .gallery {
@@ -1071,30 +1204,6 @@ section#hero h1 {
     gap: 32px;
     justify-items: center;
   }
-
-  /* Position submenu to the left of the mobile menu */
-  .mobile-nav .has-submenu {
-  position: relative;
-  }
-
-  .mobile-nav .submenu {
-  position: absolute;
-  top: 0;                /* Align vertically with parent item */
-  right: 100%;           /* Place submenu to the LEFT */
-  left: auto;
-  background-color: var(--background-color-1);
-  padding: 10px 15px;
-  min-width: 180px;
-  border-radius: 8px;
-  display: none;         /* Hidden until opened */
-  z-index: 9999;         /* Ensure it's above the menu */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  }
-
-}
-
-.mobile-nav .submenu.open-submenu {
-  display: block;
 }
 
 
@@ -1178,7 +1287,7 @@ section#hero h1 {
     max-width: 90vw;
   }
 
-  section#faq-section .faq-category{
+  section#faq-section .faq-category {
     width: 90vw;
   }
 
@@ -1244,6 +1353,7 @@ section#hero h1 {
     opacity: 0;
     transform: translateY(20px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -1273,6 +1383,7 @@ section#hero h1 {
     opacity: 0;
     transform: translateX(40px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateX(0) scale(1);
@@ -1284,6 +1395,7 @@ section#hero h1 {
     opacity: 0;
     transform: translateY(0px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -1295,6 +1407,7 @@ section#hero h1 {
     opacity: 0;
     transform: translateX(-40px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateX(0) scale(1);
@@ -1355,14 +1468,14 @@ section#hero h1 {
   background: #fff;
   padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 
 .gallery:hover {
   transform: scale(1.03);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .gallery img {
@@ -1398,83 +1511,3 @@ section#hero h1 {
     border-top: 3px solid #388E3C;
   }
 }
-
-/* CSS for News*/
-
-#dental-news {
-    padding: 100px;
-    background-color: #f5f5f5;
-}
-
-#dental-news .container {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-#dental-news h2 {
-    color: #2e8b57;
-    margin-bottom: 10px;
-}
-
-#dental-news p {
-    margin-bottom: 30px;
-    color: #555;
-    font-size: 16px;
-}
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 85px;
-}
-
-.news-card {
-    background: #f0f0f0;
-    border-radius: 10px;
-    overflow: hidden;
-    /*box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;*/
-}
-
-.news-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.news-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.news-card .content {
-    padding: 15px;
-    text-align: left;
-}
-
-.news-card h3 {
-    color: #2e8b57;
-    margin-bottom: 10px;
-    font-style: italic;
-}
-
-.news-card a {
-  color: #0077b6;
-  font-size: 15px;
-  font-style: italic;
-}
-
-.news-card p {
-    color: #555;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-@media (max-width: 600px) {
-    .news-grid {
-        grid-template-columns: 1fr; 
-    }
-}
-

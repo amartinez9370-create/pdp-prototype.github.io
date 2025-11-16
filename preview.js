@@ -65,14 +65,14 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Hamburger menu
- const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
 
-  // Auto-close hamburger menu when clicking outside
+// Auto-close hamburger menu when clicking outside
 document.addEventListener('click', (event) => {
   const isClickInside = hamburger.contains(event.target) || navLinks.contains(event.target);
   if (!isClickInside && navLinks.classList.contains('show')) {
@@ -86,48 +86,6 @@ navLinks.querySelectorAll('a').forEach(link => {
     navLinks.classList.remove('show');
   });
 });
-
-
-// === MOBILE SUBMENU HANDLING ===
-const mobileNav = document.getElementById("mobile-nav");
-const hasSubmenu = document.querySelector(".mobile-nav .has-submenu");
-const submenu = hasSubmenu.querySelector(".submenu");
-
-// Tap SERVICES → open/close only the submenu (not the whole menu)
-hasSubmenu.addEventListener("click", function (e) {
-  e.preventDefault();  
-  e.stopPropagation(); 
-  submenu.classList.toggle("open-submenu");
-});
-
-// Close menu + submenu when tapping a submenu item
-submenu.querySelectorAll("a").forEach(item => {
-  item.addEventListener("click", function () {
-    submenu.classList.remove("open-submenu");
-    mobileNav.classList.remove("menu-active");
-    document.body.classList.remove("no-scroll");
-  });
-});
-
-// Close when tapping OUTSIDE the mobile menu
-document.addEventListener("click", function (e) {
-  if (!mobileNav.contains(e.target)) {
-    submenu.classList.remove("open-submenu");
-    mobileNav.classList.remove("menu-active");
-    document.body.classList.remove("no-scroll");
-  }
-});
-
-// Close menu (not submenu) when tapping ABOUT or CONTACT
-document.querySelectorAll(".mobile-nav a:not(.has-submenu > a)").forEach(link => {
-  link.addEventListener("click", function () {
-    mobileNav.classList.remove("menu-active");
-    document.body.classList.remove("no-scroll");
-  });
-});
-
-
-
 
 
 
@@ -155,41 +113,41 @@ backToTop.addEventListener('click', (e) => {
 const carouselContainer = document.querySelector(".carousel-container");
 if (carouselContainer) {
 
-// Google Sheet published CSV link
-// const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNwE-_eZj9WP_pphSHsxKzyQwbFUny6-u3hWTCeYE-nYFkPq3-X3XF4h7QQY0qjurOK95iHLhqiBla/pub?output=csv";
-const sheetURL = "assets/site/Service Review for Paciente Dental Pod.csv";
+  // Google Sheet published CSV link
+  // const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNwE-_eZj9WP_pphSHsxKzyQwbFUny6-u3hWTCeYE-nYFkPq3-X3XF4h7QQY0qjurOK95iHLhqiBla/pub?output=csv";
+  const sheetURL = "assets/site/Service Review for Paciente Dental Pod.csv";
 
-let testimonials = [];
-const container = document.getElementById("carousel-container");
-let index = 0;
-let interval;
+  let testimonials = [];
+  const container = document.getElementById("carousel-container");
+  let index = 0;
+  let interval;
 
-// Load data from Google Sheets
-fetch(sheetURL)
-  .then(response => response.text())
-  .then(csv => {
-    const rows = csv.split("\n").slice(1); // skip headers
-    testimonials = rows
-      .map(row => {
-        const [name, service, review, rating] = row.split(",");
-        return { name, service, review, rating: parseInt(rating || 0) };
-      })
-      .filter(t => t.review && t.name); // ignore empty rows
+  // Load data from Google Sheets
+  fetch(sheetURL)
+    .then(response => response.text())
+    .then(csv => {
+      const rows = csv.split("\n").slice(1); // skip headers
+      testimonials = rows
+        .map(row => {
+          const [name, service, review, rating] = row.split(",");
+          return { name, service, review, rating: parseInt(rating || 0) };
+        })
+        .filter(t => t.review && t.name); // ignore empty rows
 
-    initCarousel();
-  })
-  .catch(error => console.error("Error loading testimonials:", error));
+      initCarousel();
+    })
+    .catch(error => console.error("Error loading testimonials:", error));
 
-// Initialize carousel
-function initCarousel() {
-  if (!testimonials.length) {
-    container.innerHTML = "<p>No testimonials available at the moment.</p>";
-    return;
-  }
+  // Initialize carousel
+  function initCarousel() {
+    if (!testimonials.length) {
+      container.innerHTML = "<p>No testimonials available at the moment.</p>";
+      return;
+    }
 
-  container.innerHTML = testimonials
-    .map(
-      t => `
+    container.innerHTML = testimonials
+      .map(
+        t => `
       <div class="testimonial">
         <p>"${t.review.trim()}"</p>
         <h3 class="stars">${"★".repeat(t.rating)}${"☆".repeat(5 - t.rating)}</h3>
@@ -197,57 +155,57 @@ function initCarousel() {
         <p><strong>${t.name.trim()}</strong> &nbsp ${t.service.trim()}</p>
       </div>
     `
-    )
-    .join("");
+      )
+      .join("");
 
-  startAutoSlide();
-}
-
-// Slide control
-function showSlide(i) {
-  if (i < 0) index = testimonials.length - 1;
-  else if (i >= testimonials.length) index = 0;
-  else index = i;
-
-  container.style.transform = `translateX(-${index * 100}%)`;
-}
-
-function nextSlide() {
-  showSlide(index + 1);
-}
-function prevSlide() {
-  showSlide(index - 1);
-}
-
-// Auto-slide setup
-function startAutoSlide() {
-  stopAutoSlide();
-  interval = setInterval(nextSlide, 8000);
-}
-function stopAutoSlide() {
-  if (interval) clearInterval(interval);
-}
-
-// Pause auto-slide when hovering over the carousel
-const carousel = document.querySelector("#testimonials .carousel");
-
-carousel.addEventListener("mouseenter", stopAutoSlide);
-carousel.addEventListener("mouseleave", startAutoSlide);
-
-
-// Navigation buttons
-document
-  .querySelector("#testimonials .next-btn")
-  .addEventListener("click", () => {
-    nextSlide();
     startAutoSlide();
-  });
-document
-  .querySelector("#testimonials .prev-btn")
-  .addEventListener("click", () => {
-    prevSlide();
-    startAutoSlide();
-  });
+  }
+
+  // Slide control
+  function showSlide(i) {
+    if (i < 0) index = testimonials.length - 1;
+    else if (i >= testimonials.length) index = 0;
+    else index = i;
+
+    container.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(index + 1);
+  }
+  function prevSlide() {
+    showSlide(index - 1);
+  }
+
+  // Auto-slide setup
+  function startAutoSlide() {
+    stopAutoSlide();
+    interval = setInterval(nextSlide, 8000);
+  }
+  function stopAutoSlide() {
+    if (interval) clearInterval(interval);
+  }
+
+  // Pause auto-slide when hovering over the carousel
+  const carousel = document.querySelector("#testimonials .carousel");
+
+  carousel.addEventListener("mouseenter", stopAutoSlide);
+  carousel.addEventListener("mouseleave", startAutoSlide);
+
+
+  // Navigation buttons
+  document
+    .querySelector("#testimonials .next-btn")
+    .addEventListener("click", () => {
+      nextSlide();
+      startAutoSlide();
+    });
+  document
+    .querySelector("#testimonials .prev-btn")
+    .addEventListener("click", () => {
+      prevSlide();
+      startAutoSlide();
+    });
 
 }
 
@@ -270,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // === ABOUT IMAGE SLIDES (CLINIC)===
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Select the image element
   const aboutImage = document.getElementById("aboutImage");
 
@@ -306,7 +264,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // === ABOUT IMAGE SLIDES (CLINIC)===
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Select the image element
   const aboutImageDentist = document.getElementById("aboutImageDentist");
 
