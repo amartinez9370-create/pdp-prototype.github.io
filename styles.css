@@ -696,7 +696,7 @@ section#downloads {
 /* CSS for News*/
 
 #dental-news {
-  padding: 100px;
+  padding: 100px 10vw;
   background-color: #f0f0f0;
 }
 
@@ -782,7 +782,7 @@ section#downloads {
 } */
 
 section#faq-section {
-  padding: 100px;
+  padding: 100px 10vw;
 }
 
 #faq-section .faq-description {
