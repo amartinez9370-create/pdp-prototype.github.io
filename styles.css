@@ -711,6 +711,15 @@ section#dental-tips {
   text-align: left;
 }
 
+section#dental-tips p {
+  justify-self: center;
+  text-align: justify;
+}
+
+section#dental-tips li {
+  margin-bottom: 10px;
+}
+
 /* === TIPS & NEWS PAGE (DOWNLOADS) === */
 section#downloads {
   display: flex;
@@ -721,6 +730,10 @@ section#downloads {
   color: #2b2b2b;
   align-items: center;
   text-align: left;
+}
+
+section#downloads p {
+  text-align: justify;
 }
 
 
@@ -747,6 +760,7 @@ section#downloads {
   margin-bottom: 30px;
   color: #555;
   font-size: 16px;
+  text-align: justify;
 }
 
 .news-grid {
