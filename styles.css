@@ -767,6 +767,7 @@ section#downloads {
   font-size: 14px;
   line-height: 1.5;
   text-align: justify;
+  max-width: 100%;
 }
 
 @media (max-width: 800px) {
