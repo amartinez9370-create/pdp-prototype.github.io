@@ -87,6 +87,23 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  const submenuParents = document.querySelectorAll(".has-submenu");
+
+  submenuParents.forEach(parent => {
+    parent.addEventListener("click", function(e) {
+      // Only trigger in mobile mode (nav is open)
+      if (window.innerWidth < 900) {
+        e.preventDefault(); // Prevent link from redirecting
+        this.classList.toggle("open");
+      }
+    });
+  });
+});
+
+
+
 // Back to top button
 const backToTop = document.getElementById('backToTop');
 
@@ -225,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// === ABOUT IMAGE SLIDES ===
+// === ABOUT IMAGE SLIDES (CLINIC)===
 document.addEventListener("DOMContentLoaded", function() {
   // Select the image element
   const aboutImage = document.getElementById("aboutImage");
@@ -260,3 +277,37 @@ document.addEventListener("DOMContentLoaded", function() {
   setInterval(changeAboutImage, 8000);
 });
 
+
+// === ABOUT IMAGE SLIDES (CLINIC)===
+document.addEventListener("DOMContentLoaded", function() {
+  // Select the image element
+  const aboutImageDentist = document.getElementById("aboutImageDentist");
+
+  // List of image file paths to cycle through
+  const aboutImagesD = [
+    "assets/images/bernadette-paciente-2.png",
+    "assets/images/bernadette-paciente-1.png"
+  ];
+
+  let currentIndex = 0;
+
+  // Function to change the image with fade effect
+  function changeAboutImageDentist() {
+    aboutImageDentist.classList.add("fade-out");
+
+    // Wait for fade-out to complete
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % aboutImagesD.length;
+      aboutImageDentist.src = aboutImagesD[currentIndex];
+
+      aboutImageDentist.classList.remove("fade-out");
+      aboutImageDentist.classList.add("fade-in");
+
+      // Remove fade-in class after animation
+      setTimeout(() => aboutImageDentist.classList.remove("fade-in"), 500);
+    }, 500);
+  }
+
+  // Change image every 6 seconds
+  setInterval(changeAboutImageDentist, 8000);
+});

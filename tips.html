@@ -32,15 +32,108 @@
     
         <!-- Nav links -->
         <ul id="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="services.html#services-page">SERVICES</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="tips.html#dental-tips">TIPS & NEWS</a></li>
+            <li><a href="index.html#hero">HOME</a></li>
+
+            <li class="has-submenu">
+                <a href="services.html">SERVICES</a>
+                <ul class="submenu">
+                    <li><a href="services.html#services-page">All Services</a></li>
+                    <li><a href="services.html#gallery">Before and After</a></li>
+                </ul>
+            </li>
+
+            <li class="has-submenu">
+                <a href="about.html">ABOUT</a>
+                <ul class="submenu">
+                    <li><a href="about.html#about">About Us</a></li>
+                    <li><a href="about.html#credit">Accreditations</a></li>
+                </ul>
+            </li>
+
+            <li class="has-submenu">
+                <a href="tips.html">RESOURCES</a>
+                <ul class="submenu">
+                    <li><a href="tips.html#dental-news">Dental News</a></li>
+                    <li><a href="tips.html#dental-tips">Oral Health Tips</a></li>
+                    <li><a href="tips.html#downloads">Patient Forms</a></li>
+                </ul>
+            </li>
+
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     
     </nav>
+
+
+    <!-- Dental News Section -->
+<section id="dental-news">
+    <br>
+    <div class="container">
+        <h2>Dental News</h2>
+        <br>
+        <p style="text-align: center; color: black;">Discover the newest innovations, research, and global trends in dental care.</p>
+
+        <div class="news-grid">
+            
+            <div class="news-card">
+                <img src="assets/images/news3.jpg" alt="Philippines digital dental laboratory">
+                <div class="content">
+                    <h3>First Digital Dental Lab Launched in PH</h3>
+                    <p>17 July 2025</p>
+                    <p>
+                        The University of the Philippines College of Dentistry inaugurated the country’s first full-blown Digital Dental Laboratory equipped with 3D printers, intra-oral and facial scanners, 
+                        and CAM mills — setting a new milestone in dental education and patient care in the Philippines.
+                    </p>                   
+                    <a href="https://www.upm.edu.ph/cpt_news/up-college-of-dentistry-inaugurates-state-of-the-art-digital-dental-laboratory/" target="_blank">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="assets/images/news1.jpg" alt="Magnetic nanobots for tooth sensitivity">
+                <div class="content">
+                    <h3>Magnetic Nanobots Treat Tooth Sensitivity</h3>
+                    <p>August 2025</p>
+                    <p>
+                        Indian researchers at IISc and startup Theranautilus have developed "CalBots"—magnetic nanobots that self-assemble inside dentinal tubules to provide long-lasting relief from tooth sensitivity, 
+                        offering a potential one-time solution for millions worldwide.
+                    </p>                    
+                    <a href="https://timesofindia.indiatimes.com/city/bengaluru/iisc-startup-develop-magnetic-nanobots-to-treat-tooth-sensitivity/articleshow/123288998.cms" target="_blank">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="assets/images/news2.jpg" alt="WHO global oral health strategy">
+                <div class="content">
+                    <h3>WHO releases Global strategy and action plan on oral health</h3>
+                    <p>26 April 2024</p>
+                    <p>
+                        The World Health Organization has released its Global Strategy and Action Plan on Oral Health 2023–2030, outlining policies and priority actions to strengthen oral health integration into health systems worldwide.
+                       The plan includes 100 actions and 11 global targets to improve access to oral care for all communities.
+                    </p>
+                    <a href="https://www.who.int/news/item/26-05-2024-who-releases-global-strategy-and-action-plan-on-oral-health" target="_blank">Read More</a>
+                </div>
+            </div>
+            
+            <div class="news-card">
+                <img src="assets/images/news4.jpg" alt="AI Dental X-Ray Tool Philippines">
+                <div class="content">
+                    <h3>AI Tool Detects Dental & Sinus Issues with 98.2% Accuracy</h3>
+                    <p>3 April 2025</p>
+                    <p>
+                        A Filipino research team in partnership with international experts developed an AI model that analyzes dental panoramic X-rays with 98.2% accuracy, 
+                        offering early detection of odontogenic sinusitis and other hidden oral-sinus conditions.
+                    </p>
+                    <br><br>
+                    <a href="https://philippinesgraphic.com.ph/2025/04/03/ai-dental-assistant-reads-x-rays-with-near-perfect-accuracy/" target="_blank">Read More</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
 
     <!-- Dental Tips Section -->
 <section id="dental-tips">
@@ -139,10 +232,10 @@
         </div>
 
     </div>
-</section>
-
-    
-    <!-- Contact Section -->
+</section> 
+ 
+     
+<!-- Contact Section -->
     <section id="contact">
         
         <div class="contact-text">
@@ -188,9 +281,7 @@
         </div>
 
     </section>
-
     
-
     <!-- Footer Section -->
     <footer>
         <div id="set">
