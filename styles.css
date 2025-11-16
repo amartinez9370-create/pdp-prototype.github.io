@@ -704,6 +704,7 @@ section#downloads {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  justify-items: center;
 }
 
 #dental-news h2 {
@@ -745,6 +746,7 @@ section#downloads {
 
 .news-card .content {
   padding: 15px;
+  justify-items: center;
   text-align: left;
 }
 
