@@ -1293,8 +1293,12 @@ footer #copyright {
     margin-right: auto;
   }
 
+  section#hero .hero-content {
+    margin-top: 80px;
+  }
+
   section#hero h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .banner {
@@ -1325,7 +1329,7 @@ footer #copyright {
   }
 
   #services .feature-gallery h3 {
-    font-size: large;
+    font-size: medium;
   }
 
   #services-page .service-info {
@@ -1340,6 +1344,11 @@ footer #copyright {
   #services-page .feature-gallery img,
   #services-page .hover-wrap {
     display: none;
+  }
+
+  #services .btn-set1 {
+    display: flex;
+    flex-direction: column;
   }
 
   section#faq-section {
