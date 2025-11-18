@@ -1179,7 +1179,7 @@ footer #copyright {
     position: absolute;
     top: 60px;
     right: 0;
-    width: 200px;
+    width: 100px;
     padding: 20px;
     gap: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -1193,14 +1193,14 @@ footer #copyright {
   nav ul li a {
     display: block;
     padding: 5px 0;
-    font-size: small;
+    font-size: medium;
   }
 
   .submenu {
     display: none;
     position: absolute;
-    top: 0%;
-    left: -200px;
+    top: -15px;
+    left: -180px;
     background: #2e2e2e;
     padding: 10px 0;
     min-width: 180px;
