@@ -1193,7 +1193,7 @@ footer #copyright {
   nav ul li a {
     display: block;
     padding: 5px 0;
-    font-size: medium;
+    font-size: small;
   }
 
   .submenu {
